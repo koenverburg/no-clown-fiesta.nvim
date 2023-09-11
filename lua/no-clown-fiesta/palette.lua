@@ -1,4 +1,4 @@
-local colors = {
+local dark = {
   none = "NONE",
   fg = "#E1E1E1",
   bg = "#151515",
@@ -32,4 +32,41 @@ local colors = {
   accent_red = "#201919",
 }
 
-return colors
+local light = {
+  none = "NONE",
+  fg = "#151515",
+  bg = "#E1E1E1",
+  alt_bg = "#F0F0F0",
+  accent = "#D0D0D0",
+  white = "#151515",
+  gray = "#AFAFAF",
+  medium_gray = "#727272",
+  light_gray = "#373737",
+  blue = "#BAD7FF",
+  gray_blue = "#A2B5C1",
+  medium_gray_blue = "#7E97AB",
+  cyan = "#88afa2",
+  red = "#b46958",
+  green = "#90A959",
+  yellow = "#F4BF75",
+  orange = "#FFA557",
+  purple = "#AA749F",
+  magenta = "#AA759F",
+  cursor_fg = "#E1E1E1",
+  cursor_bg = "#151515",
+  sign_add = "#586935",
+  sign_change = "#51657B",
+  sign_delete = "#984936",
+  error = "#984936",
+  warning = "#ab8550",
+  info = "#ab8550",
+  hint = "#576f82",
+  neogit_light_green = "#2A2E19",
+  neogit_blue = "#1B1F27",
+  neogit_green = "#212513",
+  neogit_light_red = "#402020",
+  neogit_red = "#351D1D",
+}
+
+return dark
+

@@ -1,31 +1,53 @@
 local M = {}
 
+local overwrite = {
+  line = '#00010A',
+  guide_active = '#393F4D',
+  guide_normal = '#242A35',
+  orangeDark = '#FFCC00',
+  markup = '#F07178'
+}
+
 function M.highlight(palette, opts)
   return {
     Normal = {
       fg = palette.fg,
-      bg = opts.transparent and palette.none or palette.bg,
+      bg = opts.transparent and palette.none or overwrite.line,
     },
-    SignColumn = { bg = opts.transparent and palette.none or palette.bg },
+    SignColumn = { bg = opts.transparent and palette.none or overwrite.line  },
     MsgArea = {
       fg = palette.fg,
-      bg = opts.transparent and palette.none or palette.bg,
+      bg = opts.transparent and palette.none or overwrite.line,
     },
-    ModeMsg = { fg = palette.fg, bg = palette.bg },
-    MsgSeparator = { fg = palette.fg, bg = palette.bg },
+    ModeMsg = { fg = palette.fg, bg = overwrite.line },
+    MsgSeparator = { fg = palette.fg, bg = overwrite.line },
     SpellBad = { sp = palette.error, undercurl = true },
     SpellCap = { sp = palette.yellow, undercurl = true },
     SpellLocal = { sp = palette.sign_add, undercurl = true },
     SpellRare = { sp = palette.purple, undercurl = true },
     NormalNC = {
       fg = palette.fg,
-      bg = opts.transparent and palette.none or palette.bg,
+      bg = opts.transparent and palette.none or overwrite.line,
     },
+
+    -- Group.new("PMenu", c.gray4, c.gray2)
+    -- Group.new("PMenuSel", c.gray0, c.yellow:light())
+    -- Group.new("PMenuSbar", nil, c.gray0)
+    -- Group.new("PMenuThumb", nil, c.gray4)
+
+    -- Pmenu = { fg = palette.light_gray, bg = palette.accent },
+    -- PmenuSel = { fg = '#888888', bg = '#FFCC00' },
+    -- PmenuSbar = { bg = '#111111' },
+    -- PmenuThumb = { bg = '#111111' },
     Pmenu = { fg = palette.light_gray, bg = palette.accent },
     PmenuSel = { fg = palette.blue, bg = palette.alt_bg },
+    PmenuSbar = { bg = overwrite.line },
+    PmenuThumb = { bg = palette.blue },
+
     WildMenu = { fg = palette.blue, bg = palette.alt_bg },
     CursorLineNr = {
-      fg = palette.light_gray,
+      fg = overwrite.orangeDark,
+      -- bg = overwrite.line,
       bold = true,
     },
     Comment = vim.tbl_extend(
@@ -35,11 +57,12 @@ function M.highlight(palette, opts)
     ),
     Folded = { fg = palette.light_gray, bg = palette.alt_bg },
     FoldColumn = { fg = palette.light_gray, bg = palette.alt_bg },
-    LineNr = { fg = palette.gray },
+    LineNr = { fg = overwrite.guide_normal },
     Whitespace = { fg = palette.gray },
     VertSplit = { fg = palette.bg, bg = palette.accent },
     CursorLine = {
       bg = palette.alt_bg,
+      -- underline = true,
     },
     CursorColumn = { bg = palette.alt_bg },
     ColorColumn = { bg = palette.alt_bg },
@@ -57,9 +80,7 @@ function M.highlight(palette, opts)
     },
     DiffDelete = { fg = palette.sign_delete, bg = palette.accent_red },
     QuickFixLine = { bg = palette.accent },
-    PmenuSbar = { bg = palette.alt_bg },
-    PmenuThumb = { bg = palette.light_gray },
-    MatchWord = { underline = true },
+    MatchWord = { underline = true, bg = palette.blue },
     MatchParen = { fg = palette.blue, bg = palette.bg, underline = true },
     MatchWordCur = { underline = true },
     MatchParenCur = { underline = true },
