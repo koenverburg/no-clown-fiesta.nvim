@@ -55,7 +55,7 @@ function M.highlight(palette, opts)
       { fg = palette.medium_gray },
       opts.styles.comments
     ),
-    Folded = { fg = palette.light_gray, bg = palette.alt_bg },
+    Folded = { fg = palette.light_gray, bg = 'NONE' },
     FoldColumn = { fg = palette.light_gray, bg = palette.alt_bg },
     LineNr = { fg = overwrite.guide_normal },
     Whitespace = { fg = palette.gray },
