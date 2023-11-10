@@ -1,40 +1,25 @@
 local M = {}
 
 local overwrite = {
-  line = '#00010A',
-  guide_active = '#393F4D',
-  guide_normal = '#242A35',
-  orangeDark = '#FFCC00',
-  markup = '#F07178'
+  line = "#00010A",
+  guide_active = "#393F4D",
+  guide_normal = "#242A35",
+  orangeDark = "#FFCC00",
+  markup = "#F07178",
 }
 
 function M.highlight(palette, opts)
   return {
-    Normal = {
-      fg = palette.fg,
-      bg = opts.transparent and palette.none or overwrite.line,
-    },
-    SignColumn = { bg = opts.transparent and palette.none or overwrite.line  },
-    MsgArea = {
-      fg = palette.fg,
-      bg = opts.transparent and palette.none or overwrite.line,
-    },
+    Normal = { fg = palette.fg, bg = opts.transparent and palette.none or overwrite.line },
+    SignColumn = { bg = opts.transparent and palette.none or overwrite.line },
+    MsgArea = { fg = palette.fg, bg = opts.transparent and palette.none or overwrite.line },
     ModeMsg = { fg = palette.fg, bg = overwrite.line },
     MsgSeparator = { fg = palette.fg, bg = overwrite.line },
     SpellBad = { sp = palette.error, undercurl = true },
     SpellCap = { sp = palette.yellow, undercurl = true },
     SpellLocal = { sp = palette.sign_add, undercurl = true },
     SpellRare = { sp = palette.purple, undercurl = true },
-    NormalNC = {
-      fg = palette.fg,
-      bg = opts.transparent and palette.none or overwrite.line,
-    },
-
-    -- Group.new("PMenu", c.gray4, c.gray2)
-    -- Group.new("PMenuSel", c.gray0, c.yellow:light())
-    -- Group.new("PMenuSbar", nil, c.gray0)
-    -- Group.new("PMenuThumb", nil, c.gray4)
-
+    NormalNC = { fg = palette.fg, bg = opts.transparent and palette.none or overwrite.line },
     -- Pmenu = { fg = palette.light_gray, bg = palette.accent },
     -- PmenuSel = { fg = '#888888', bg = '#FFCC00' },
     -- PmenuSbar = { bg = '#111111' },
@@ -45,17 +30,10 @@ function M.highlight(palette, opts)
     PmenuThumb = { bg = palette.blue },
 
     WildMenu = { fg = palette.blue, bg = palette.alt_bg },
-    CursorLineNr = {
-      fg = overwrite.orangeDark,
-      -- bg = overwrite.line,
-      bold = true,
-    },
-    Comment = vim.tbl_extend(
-      "force",
-      { fg = palette.medium_gray },
-      opts.styles.comments
-    ),
-    Folded = { fg = palette.light_gray, bg = 'NONE' },
+    -- bg = overwrite.line,
+    CursorLineNr = { fg = overwrite.orangeDark, bold = true },
+    Comment = vim.tbl_extend("force", { fg = palette.medium_gray }, opts.styles.comments),
+    Folded = { fg = palette.light_gray, bg = "NONE" },
     FoldColumn = { fg = palette.light_gray, bg = palette.alt_bg },
     LineNr = { fg = overwrite.guide_normal },
     Whitespace = { fg = palette.gray },
@@ -108,17 +86,17 @@ function M.highlight(palette, opts)
     Question = { fg = palette.cyan },
     EndOfBuffer = { fg = palette.bg },
     NonText = { fg = palette.bg },
-    Variable = vim.tbl_extend("force", { fg = palette.white }, opts.styles.variables),
+    Variable = vim.tbl_extend("force", { fg = palette.custom.red }, opts.styles.variables),
     String = { fg = palette.medium_gray_blue },
     Character = { fg = palette.green },
-    Constant = { fg = palette.white },
+    Constant = { fg = palette.custom.red },
     Number = { fg = palette.red },
     Boolean = { fg = palette.red },
     Float = { fg = palette.red },
     Identifier = { fg = palette.white },
     Function = vim.tbl_extend("force", { fg = palette.cyan }, opts.styles.functions),
     Operator = { fg = palette.white },
-    Type = vim.tbl_extend("force", { fg = palette.white }, opts.styles.type),
+    Type = vim.tbl_extend("force", { fg = palette.custom.red, bold = true }, opts.styles.type),
     StorageClass = { fg = palette.gray_blue },
     Structure = { fg = palette.gray_blue },
     Typedef = { fg = palette.white },
@@ -138,11 +116,7 @@ function M.highlight(palette, opts)
     Tag = { fg = palette.blue },
     Debug = { fg = palette.red },
     Delimiter = { fg = palette.white },
-    SpecialComment = vim.tbl_extend(
-      "force",
-      { fg = palette.medium_gray },
-      opts.styles.comments
-    ),
+    SpecialComment = vim.tbl_extend("force", { fg = palette.medium_gray }, opts.styles.comments),
     Underlined = { underline = true },
     Bold = { bold = true },
     Italic = { italic = true },

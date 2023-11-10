@@ -1,4 +1,28 @@
+local nightcoder = {
+  bright = {
+    pinkish = "#FB467B",
+  },
+  red = {
+    shade1 = "#feffff",
+    shade2 = "#f8d3d2",
+    shade3 = "#f2a8a5",
+    shade4 = "#ed7d79",
+    shade5 = "#e5524c",
+    shade6 = "#df271f",
+    shade7 = "#b21f19",
+    shade8 = "#851713",
+    shade9 = "#590f0c",
+  },
+}
+
+local custom = {
+  pinkish = "#FB467B",
+  red5 = "#e5524c"
+}
+
 local dark = {
+  nightcoder = nightcoder,
+  custom = custom,
   none = "NONE",
   fg = "#E1E1E1",
   bg = "#151515",
@@ -69,4 +93,3 @@ local light = {
 }
 
 return dark
-
