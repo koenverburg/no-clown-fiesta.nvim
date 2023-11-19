@@ -2,6 +2,18 @@ local nightcoder = {
   bright = {
     pinkish = "#FB467B",
   },
+  wayfinder = {
+    red = '#8b0000',
+    red1 = '#7d0000',
+    red2 = '#6f0000',
+    red3 = '#610000',
+    red4 = '#530000',
+    red5 = '#460000',
+    red6 = '#380000',
+    red7 = '#2a0000',
+    red8 = '#1c0000',
+    red9 = '#0e0000',
+  },
   red = {
     shade1 = "#feffff",
     shade2 = "#f8d3d2",
@@ -13,6 +25,36 @@ local nightcoder = {
     shade8 = "#851713",
     shade9 = "#590f0c",
   },
+  orange = {
+    shade1 = '#fff9f2',
+    shade2 = '#fee3c1',
+    shade3 = '#ffd099',
+    shade4 = '#ffb966',
+    shade5 = '#ffa233',
+    shade6 = '#ff8b00',
+    shade7 = '#cc6f00',
+  }
+}
+
+local crimson = {
+  text = '#FEFDFD',
+  backgroundDark = '#ff6363',
+  backgroundLight = '#733434',
+  -- background = rgba 0,0,0,0.75,
+  string = '#EBB99D',
+  comment = '#895E60',
+  variable = '#C88E8E',
+  variable2 = '#FFE4E4',
+  variable3 = '#E97598',
+  number = '#FDA97A',
+  atom = '#FDA97A',
+  keyword = '#EB6F6F',
+  property = '#D15510',
+  definition = '#C88E8E',
+  meta = '#FFE4E4',
+  operator = '#EB6F6F',
+  attribute = '#C88E8E',
+  tag = '#EB6F6F',
 }
 
 local custom = {
@@ -21,9 +63,13 @@ local custom = {
 }
 
 local dark = {
+
+  x = custom.pinkish,
   nightcoder = nightcoder,
   custom = custom,
+  crimson = crimson,
   none = "NONE",
+
   fg = "#E1E1E1",
   bg = "#151515",
   alt_bg = "#171717",
@@ -33,10 +79,14 @@ local dark = {
   medium_gray = "#727272",
   light_gray = "#AFAFAF",
   blue = "#BAD7FF",
-  gray_blue = "#7E97AB",
+  gray_blue = crimson.keyword,
+  -- gray_blue = nightcoder.red.shade4,
+  -- gray_blue = "#7E97AB",
   medium_gray_blue = "#A2B5C1",
-  cyan = "#88afa2",
-  red = "#b46958",
+  cyan = crimson.property,
+  -- cyan = "#88afa2",
+  red = crimson.atom,
+  -- red = "#b46958",
   green = "#90A959",
   yellow = "#F4BF75",
   orange = "#FFA557",
